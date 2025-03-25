@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl"> <!-- Set the default language to Arabic -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pricing Plans</title>
+  <title>UPS Juniors</title>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-
   <style>
+
+
+/* General RTL Styles */
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right; /* Align text to the right */
+}
+
+/* Adjustments for specific elements */
+[dir="rtl"] .nav-links {
+    margin-right: 0; /* Adjust margins for RTL */
+    margin-left: auto;
+}
+
+[dir="rtl"] .hero-content {
+    text-align: right; /* Align hero content to the right */
+}
+
+[dir="rtl"] .faq-header {
+    text-align: right; /* Align FAQ headers to the right */
+}
+
+[dir="rtl"] .faq-content {
+    text-align: right; /* Align FAQ content to the right */
+}
+
+
+
+[dir="rtl"] .form-container {
+    text-align: center; /* Align slide info to the right */
+}
+
+
+[dir="rtl"] .form-container input {
+    text-align: right; /* Align slide info to the right */
+}
+
+[dir="rtl"] .userForm  {
+    text-align: center; /* Align slide info to the right */
+}
+
+[dir="rtl"] .slider-container {
+  direction: ltr;
+text-align: left; /* Align text to the left */
+}
+
+[dir="rtl"] .slide-info {
+    text-align: center; /* Align slide info to the right */
+}
+
 
 
 * {
@@ -53,12 +102,6 @@
             padding: 1rem 2rem;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #0066ff;
-            text-decoration: none;
-        }
 
         .nav-links {
             list-style: none;
@@ -143,7 +186,7 @@
         }
 
         .content {
-            padding: 4rem 2rem;
+            padding: 1rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -366,12 +409,12 @@
 
     /* Private Button Style */
     .private-btn {
-      background-color: #4CAF50;
-    }
+    background-color: rgb(245 143 1);
+}
 
     /* General Button Style */
     .general-btn {
-      background-color: #2196F3;
+      background-color: rgb(161 214 255);
     }
 
     .pricing-cards {
@@ -429,11 +472,11 @@
     }
 
     .private-card {
-      background-color: #e8f5e9;
+      background-color:  rgb(253 208 144);
     }
 
     .general-card {
-      background-color: #e3f2fd;
+      background-color: #599ccc;
     }
 
     /* Card Titles with Different Colors */
@@ -442,18 +485,27 @@
       font-weight: bold;
       margin-bottom: 15px;
       color: #333;
+
+      padding: 10px;
+      border-radius: 5px;
     }
 
     .card-title.basic {
-      color: #FF9800;
+      color: #e6e3df;
+      background: linear-gradient(135deg, #FF9800, #ac721c);
+
     }
 
     .card-title.advanced {
-      color: #FF5722;
+      color: #ffffff;
+      background: linear-gradient(135deg, #FF5722, #772810);
+
     }
 
     .card-title.special {
-      color: #9C27B0;
+      color: #ffffff;
+      background: linear-gradient(135deg, #9C27B0, #530661);
+
     }
 
     .active-cards {
@@ -464,7 +516,7 @@
     }
 
     .book-now-btn {
-      background-color: #4CAF50;
+      background-color: #1f295a;
       color: white;
       padding: 10px 20px;
       border: none;
@@ -735,13 +787,52 @@
       }
     }
 
+
+/* Language Toggle Styles */
+.language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.language-icon {
+    width: 30px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: opacity 0.3s ease;
+}
+
+.logo-icon {
+    object-fit: contain;
+    object-position: 0% 50%;
+    height: 100px;
+    vertical-align: middle;
+    max-width: 100%;
+    display: inline-block;
+}
+
+.language-icon.active {
+    opacity: 1;
+}
+
+.language-icon:not(.active) {
+    opacity: 0.5;
+}
+
+
+
+
   </style>
 </head>
 <body>
 
   <header>
     <div class="nav-container">
-        <a href="#" class="logo">iLearn</a>
+      
+      <img src="D:\upswebsite sections\src\logo.png" alt="UPS" class="logo-icon">
+
         <nav>
             <button class="hamburger" id="hamburger">☰</button>
             <ul class="nav-links" id="nav-links">
@@ -753,6 +844,13 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
+         <!-- Add Language Toggle Icon -->
+         <div class="language-toggle" id="language-toggle">
+          <img src="https://flagcdn.com/w20/gb.png" alt="English" id="english-icon" class="language-icon active ">
+          <img src="https://flagcdn.com/w20/sa.png" alt="Arabic" id="arabic-icon" class="language-icon ">
+      </div>
+  
     </div>
 </header>
 
@@ -787,7 +885,7 @@
 
 
  
-<section  class="hero" id="courses" > 
+<section  class="content" id="courses" > 
 
 <!-- Slider Container -->
  
@@ -869,8 +967,8 @@
         <div class="container">
           <!-- Toggle buttons for Private / General -->
           <div class="toggle-buttons">
-            <button class="private-btn active" onclick="togglePlans('private')">Private</button>
-            <button class="general-btn" onclick="togglePlans('general')">General</button>
+            <button class="general-btn active" onclick="togglePlans('general')">General</button>
+            <button class="private-btn " onclick="togglePlans('private')">Private</button>
           </div>
 
           <!-- Pricing Cards -->
@@ -948,10 +1046,6 @@
               <h2 class="from-head">Booking Form</h2>
           </div>
 
-
-
-
-
         <form id="userForm">
         <!-- Phone with Country Code -->
          <label for="phone">Phone Number</label>
@@ -985,7 +1079,7 @@
         </select>
 
         <!-- Continuing Course -->
-        <label>Did you Alrady started any course with us before and need to complite the coueses?</label>
+        <label for="Complete">Did you Alrady started any course with us before and need to complite the coueses?</label>
         <div class="yes-no-buttons"   >
             <button   type="button" onclick="toggleCourseInput(true)">Yes</button>
             <button   type="button" onclick="toggleCourseInput(false)">No</button>
@@ -1101,12 +1195,12 @@
         generalPlans.style.display = 'none';
         privateButton.classList.add('active');
         generalButton.classList.remove('active');
-        privateButton.style.backgroundColor = '#4CAF50'; 
-        generalButton.style.backgroundColor = '#2196F3'; 
+        privateButton.style.backgroundColor = 'rgb(245 143 1)'; 
+        generalButton.style.backgroundColor = 'rgb(161 214 255)'; 
 
         cards.forEach(card => {
           if (card.classList.contains('private-card')) {
-            card.style.backgroundColor = '#e8f5e9';
+            card.style.backgroundColor = 'rgb(253 208 144)';
           } else {
             card.style.backgroundColor = '';
           }
@@ -1116,12 +1210,12 @@
         generalPlans.style.display = 'flex';
         privateButton.classList.remove('active');
         generalButton.classList.add('active');
-        privateButton.style.backgroundColor = '#4CAF50'; 
-        generalButton.style.backgroundColor = '#2196F3'; 
+        privateButton.style.backgroundColor = 'rgb(253 208 144)'; 
+        generalButton.style.backgroundColor = 'rgb(33, 150, 243)'; 
 
         cards.forEach(card => {
           if (card.classList.contains('general-card')) {
-            card.style.backgroundColor = '#e3f2fd';
+            card.style.backgroundColor = 'rgb(161 214 255)';
           } else {
             card.style.backgroundColor = '';
           }
@@ -1151,15 +1245,25 @@
     const extraCourseInput = document.getElementById('extra-course-input');
     extraCourseInput.style.display = isYes ? 'block' : 'none'; // Show or hide the extra course input
 
-    // Remove active class from both buttons
-    const buttons = document.querySelectorAll('.yes-no-buttons button');
-    buttons.forEach(button => button.classList.remove('active'));
+      // Remove active class from both buttons
+      const buttons = document.querySelectorAll('.yes-no-buttons button');
+    buttons.forEach(button => {
+        button.classList.remove('active');
+        button.style.backgroundColor = ''; // Reset background color
+    });
 
     // Add active class to the clicked button
     if (isYes) {
         buttons[0].classList.add('active'); // Yes button
+        buttons[0].style.backgroundColor = '#45a049'; // Change background color for Yes
+        buttons[1].style.backgroundColor = '#769f78'; // Change background color for No
+
+        
     } else {
         buttons[1].classList.add('active'); // No button
+        buttons[1].style.backgroundColor = '#45a049'; // Change background color for No
+        buttons[0].style.backgroundColor = '#769f78'; // Change background color for Yes
+
     }
 }
 
@@ -1211,9 +1315,39 @@
             });
         });
 
+        const courses_ar = {
+    "7-9": [
+        { title: "تصميم ألعاب ثنائية الأبعاد باستخدام Pictoblox", image: "images/game-design1.jpg" },
+        { title: "تصميم ألعاب متقدمة", image: "images/coding-intro.jpg" },
+        { title: "مقدمة في الذكاء الاصطناعي", image: "images/math-skills.jpg" }
+    ],
+    "10-12": [
+        { title: "أساسيات الروبوتات والإلكترونيات", image: "images/unity2.jpg" },
+        { title: "مشاريع الروبوتات باستخدام Arduino", image: "images/web-dev.jpg" },
+        { title: "مشاريع متقدمة باستخدام Arduino", image: "images/intermediate-math.jpg" }
+    ],
+    "13-15": [
+        { title: "أساسيات تطوير الويب", image: "images/advanced-coding.jpg" },
+        { title: "تطوير الويب المتقدم", image: "images/ai-ml.jpg" },
+        { title: "مشاريع تطوير الويب", image: "images/creative-writing.jpg" },
+        { title: "تطوير الويب باستخدام الذكاء الاصطناعي", image: "images/robotics.jpg" }
+    ],
+    "16-18": [
+        { title: "أساسيات بايثون", image: "images/python-game.jpg" },
+        { title: "الذكاء الاصطناعي باستخدام بايثون", image: "images/advanced-web.jpg" },
+        { title: "تحليل البيانات", image: "images/physics-engineering.jpg" },
+        { title: "تعلم الآلة", image: "images/biology-lab.jpg" }
+    ],
+    "19-40": [
+        { title: "مقدمة في الذكاء الاصطناعي والأدوات", image: "images/python-game.jpg" },
+        { title: "تطوير الويب باستخدام الذكاء الاصطناعي", image: "images/advanced-web.jpg" },
+        { title: "التصميم الجرافيكي باستخدام الذكاء الاصطناعي", image: "images/physics-engineering.jpg" },
+        { title: "العمل الحر وكسب المال", image: "images/biology-lab.jpg" }
+    ]
+};
 
        // ages data 
-        const courses = {
+        const courses_en = {
             "7-9": [
                 { title: "2D Game Design With Pictoblox", image: "images/game-design1.jpg" },
                 { title: "Advancie Game design ", image: "images/coding-intro.jpg" },
@@ -1244,30 +1378,44 @@
             ]
         };
         
-        function loadCourses(group) {
-            const courseList = $("#course-list");
-            courseList.empty();
-            courses[group].forEach(course => {
-                const courseCard = $(`
-                    <div class="course-card">
-                        <img src="${course.image}" alt="${course.title}">
-                        <h3>${course.title}</h3>
-                    </div>
-                `);
-                courseList.append(courseCard);
-                setTimeout(() => courseCard.addClass("show"), 50);
-            });
-        }
+      function loadCourses(group) {
+    const courseList = $("#course-list");
+    courseList.empty();
+
+    // Determine the current language
+    const language = document.documentElement.getAttribute('dir') === 'rtl' ? 'ar' : 'en';
+
+    // Select the appropriate courses based on the language
+    const courses = language === 'ar' ? courses_ar : courses_en;
+
+    // Load the courses for the selected age group
+    courses[group].forEach(course => {
+        const courseCard = $(`
+            <div class="course-card">
+                <img src="${course.image}" alt="${course.title}">
+                <h3>${course.title}</h3>
+            </div>
+        `);
+        courseList.append(courseCard);
+        setTimeout(() => courseCard.addClass("show"), 50);
+    });
+}
         
-        $(document).ready(function() {
-            loadCourses("7-9");
-            $(".button").click(function() {
-                $(".button").removeClass("active");
-                $(this).addClass("active");
-                loadCourses($(this).data("group"));
-            });
-        });
-   
+$(document).ready(function() {
+    // Load courses for the default age group (7-9) in the default language (English)
+    loadCourses("7-9");
+    translateToArabic(); // Call the function to set the Arabic translations
+    togglePlans('general'); // Set the default pricing plan to General
+
+    // Handle button clicks
+    $(".button").click(function() {
+        $(".button").removeClass("active");
+        $(this).addClass("active");
+
+        // Load courses for the selected age group
+        loadCourses($(this).data("group"));
+    });
+});
 
         <!-- FAQ -->
         function toggleFAQ(element) {
@@ -1304,6 +1452,299 @@
             }
         });
 
+
+
+
+        // Language Toggle Functionality
+document.getElementById('language-toggle').addEventListener('click', function() {
+    const englishIcon = document.getElementById('english-icon');
+    const arabicIcon = document.getElementById('arabic-icon');
+    const isEnglish = englishIcon.classList.contains('active');
+
+    if (isEnglish) {
+        // Switch to Arabic
+        englishIcon.classList.remove('active');
+        arabicIcon.classList.add('active');
+        translateToArabic();
+    } else {
+        // Switch to English
+        arabicIcon.classList.remove('active');
+        englishIcon.classList.add('active');
+        translateToEnglish();
+    }
+});
+
+function translateToArabic() {
+
+  document.documentElement.setAttribute('dir', 'rtl'); // Set RTL mode
+
+    // Navbar Translations
+    document.querySelectorAll('.nav-links a')[0].textContent = 'الرئيسية'; // Home
+    document.querySelectorAll('.nav-links a')[1].textContent = 'الأعمار'; // Ages
+    document.querySelectorAll('.nav-links a')[2].textContent = 'الأسعار'; // Price
+    document.querySelectorAll('.nav-links a')[3].textContent = 'الدورات'; // Courses
+    document.querySelectorAll('.nav-links a')[4].textContent = 'الأسئلة الشائعة'; // FAQ
+    document.querySelectorAll('.nav-links a')[5].textContent = 'اتصل بنا'; // Contact
+
+    // Hero Section Translations
+    document.querySelector('h1').textContent = 'جيل اليوم قادة التكنولوجيا في الغد';
+    document.querySelector('.hero-content p').textContent = 'انضم إلى فصولنا الحية للبرمجة 1:1 وحول مستقبلك مع إرشادات الخبراء.';
+    document.querySelector('.cta').textContent = 'ابدأ التعلم اليوم';
+
+    // Ages Section Translations
+    document.querySelectorAll('.button')[0].textContent = 'العمر 7-9';
+    document.querySelectorAll('.button')[1].textContent = 'العمر 10-12';
+    document.querySelectorAll('.button')[2].textContent = 'العمر 13-15';
+    document.querySelectorAll('.button')[3].textContent = 'العمر 16-18';
+    document.querySelectorAll('.button')[4].textContent = 'العمر 19-40';
+
+
+    // Pricing Section Translations
+    document.querySelector('.private-btn').textContent = 'خاص';
+    document.querySelector('.general-btn').textContent = 'عام';
+
+    let privateCards = document.querySelectorAll('.private-card');
+    let generalCards = document.querySelectorAll('.general-card');
+
+    // Private Plans
+    privateCards[0].querySelector('.card-title').textContent = 'أساسي';
+    privateCards[0].querySelector('.price').textContent = '2000 جنيه / الشهر';
+    privateCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> السعر شهريًا';
+    privateCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> بدون خصم';
+
+    privateCards[1].querySelector('.card-title').textContent = 'متقدم';
+    privateCards[1].querySelector('.price').textContent = '3400 جنيه';
+    privateCards[1].querySelector('.discount').textContent = 'خصم 15%';
+    privateCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> خطة لمدة شهرين';
+    privateCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> تم تطبيق الخصم';
+
+    privateCards[2].querySelector('.card-title').textContent = 'خاص';
+    privateCards[2].querySelector('.price').textContent = '8000 جنيه';
+    privateCards[2].querySelector('.discount').textContent = 'خصم 25%';
+    privateCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> خطة لمدة 5 أشهر';
+    privateCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> خصم 25%';
+
+    // General Plans
+    generalCards[0].querySelector('.card-title').textContent = 'أساسي';
+    generalCards[0].querySelector('.price').textContent = '600 جنيه / الشهر';
+    generalCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> السعر شهريًا';
+    generalCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> بدون خصم';
+
+    generalCards[1].querySelector('.card-title').textContent = 'متقدم';
+    generalCards[1].querySelector('.price').textContent = 'السعر بعد الخصم';
+    generalCards[1].querySelector('.discount').textContent = 'خصم 15%';
+    generalCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> خطة لمدة 3 أشهر';
+    generalCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> تم تطبيق الخصم';
+
+    generalCards[2].querySelector('.card-title').textContent = 'خاص';
+    generalCards[2].querySelector('.price').textContent = 'السعر بعد الخصم';
+    generalCards[2].querySelector('.discount').textContent = 'خصم 20%';
+    generalCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> خطة لمدة 5 أشهر';
+    generalCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> خصم 20%';
+
+    // Button Translations
+    document.querySelectorAll('.book-now-btn').forEach(btn => btn.textContent = 'احجز الآن');
+
+
+  
+
+    // FAQ Section Translations
+    document.querySelector('.fag_h2').textContent = 'الأسئلة الشائعة';
+    document.querySelectorAll('.faq-header')[0].innerHTML = `
+        <div class="faq-icon" style="background: orange;">▼</div>
+        ما هي الفئة العمرية التي صممت لها دوراتكم؟
+    `;
+    document.querySelectorAll('.faq-content')[0].textContent = 'دوراتنا مصممة للأطفال من عمر 7 إلى 17 عامًا...';
+
+    document.querySelectorAll('.faq-header')[1].innerHTML = `
+        <div class="faq-icon" style="background: green;">▼</div>
+        ما هو برمجة سكراتش، ولماذا هي مفيدة؟
+    `;
+    document.querySelectorAll('.faq-content')[1].textContent = 'سكراتش هي لغة برمجة تعتمد على الكتل...';
+
+    document.querySelectorAll('.faq-header')[2].innerHTML = `
+        <div class="faq-icon" style="background: blue;">▼</div>
+        هل بايثون مناسبة للأطفال، وماذا يتعلمون？
+    `;
+    document.querySelectorAll('.faq-content')[2].textContent = 'بايثون تساعد الأطفال على تعلم التفكير المنطقي...';
+
+    // Form Translations
+    document.querySelector('label[for="phone"]').textContent = 'رقم الهاتف';
+    document.querySelector('input[type="tel"]').placeholder = 'رقم الهاتف مع رمز الدولة';
+    document.querySelector('label[for="name"]').textContent = 'الاسم الكامل';
+    document.querySelector('input[type="text"]').placeholder = 'اسمك';
+    document.querySelector('label[for="age"]').textContent = 'العمر';
+    document.querySelector('label[for="branch"]').textContent = 'اختر الفرع المناسب';
+    document.querySelector('label[for="Complete"]').textContent = 'اختر نعم فى حالة اخذت دورة معنا من قبل وتحتاج إلى إكمال الدورات؟';
+    document.querySelector('label[for="course"]').textContent = 'اختر الدورة لإكمالها';
+    document.querySelector('label[for="course-Pric-sel"]').textContent = 'اختر خطة السعر';
+    document.querySelector('.yes-no-buttons button:first-child').textContent = 'نعم';
+    document.querySelector('.yes-no-buttons button:last-child').textContent = 'لا';
+    document.querySelector('.submit-cancel button:first-child').textContent = 'إرسال';
+    document.querySelector('.submit-cancel button:last-child').textContent = 'إلغاء';
+
+    // Footer Translations
+    document.querySelector('footer a').textContent = 'فيسبوك UPS Junior';
+    document.querySelectorAll('footer p')[0].textContent = 'تواصل معنا على ';
+    document.querySelectorAll('footer p')[1].textContent = '© 2025 UPS Junior. جميع الحقوق محفوظة.';
+
+    // Slider Section Translations
+    document.querySelectorAll('.slide-title')[0].textContent = 'بينج بونج ثلاثي الأبعاد';
+    document.querySelectorAll('.slide-description')[0].textContent = 'لعبة بينج بونج تعتمد على الفيزياء.';
+    document.querySelectorAll('.slide-title')[1].textContent = 'قيادة ذاتية بالذكاء الاصطناعي';
+    document.querySelectorAll('.slide-description')[1].textContent = 'سيارة مدربة بالذكاء الاصطناعي للقيادة الذاتية.';
+    document.querySelectorAll('.slide-title')[2].textContent = 'محاكاة الطقس';
+    document.querySelectorAll('.slide-description')[2].textContent = 'فيزياء المطر والعواصف في الوقت الفعلي.';
+    document.querySelectorAll('.slide-title')[3].textContent = 'حل المتاهات';
+    document.querySelectorAll('.slide-description')[3].textContent = 'الذكاء الاصطناعي يحل المتاهات المعقدة بكفاءة.';
+    document.querySelectorAll('.slide-title')[4].textContent = 'ساعة رقمية';
+    document.querySelectorAll('.slide-description')[4].textContent = 'عداد تنازلي مبني باستخدام بايثون.';
+    document.querySelectorAll('.slide-title')[5].textContent = 'بينج بونج ثلاثي الأبعاد';
+    document.querySelectorAll('.slide-description')[5].textContent = 'لعبة بينج بونج تعتمد على الفيزياء.';
+    document.querySelectorAll('.slide-title')[6].textContent = 'قيادة ذاتية بالذكاء الاصطناعي';
+    document.querySelectorAll('.slide-description')[6].textContent = 'سيارة مدربة بالذكاء الاصطناعي للقيادة الذاتية.';
+
+    // Reload Courses for Arabic
+    const activeButton = document.querySelector('.button.active');
+    if (activeButton) {
+        loadCourses(activeButton.dataset.group);
+    }
+}
+
+function translateToEnglish() {
+
+
+  document.documentElement.setAttribute('dir', 'ltr'); // Set LTR mode
+
+    // Navbar Translations
+    document.querySelectorAll('.nav-links a')[0].textContent = 'Home';
+    document.querySelectorAll('.nav-links a')[1].textContent = 'Ages';
+    document.querySelectorAll('.nav-links a')[2].textContent = 'Price';
+    document.querySelectorAll('.nav-links a')[3].textContent = 'Courses';
+    document.querySelectorAll('.nav-links a')[4].textContent = 'FAQ';
+    document.querySelectorAll('.nav-links a')[5].textContent = 'Contact';
+
+    // Hero Section Translations
+    document.querySelector('h1').textContent = "Today's Generation Tomorrow's Tech Leaders";
+    document.querySelector('.hero-content p').textContent = 'Join our live 1:1 coding classes and transform your future with expert guidance.';
+    document.querySelector('.cta').textContent = 'Start Learning Today';
+
+    // Ages Section Translations
+    document.querySelectorAll('.button')[0].textContent = 'Age 7-9';
+    document.querySelectorAll('.button')[1].textContent = 'Age 10-12';
+    document.querySelectorAll('.button')[2].textContent = 'Age 13-15';
+    document.querySelectorAll('.button')[3].textContent = 'Age 16-18';
+    document.querySelectorAll('.button')[4].textContent = 'Age 19-40';
+
+        // Pricing Section Translations
+        document.querySelector('.private-btn').textContent = 'Private';
+    document.querySelector('.general-btn').textContent = 'General';
+
+    let privateCards = document.querySelectorAll('.private-card');
+    let generalCards = document.querySelectorAll('.general-card');
+
+    // Private Plans
+    privateCards[0].querySelector('.card-title').textContent = 'Basic';
+    privateCards[0].querySelector('.price').textContent = '2000 EGP / month';
+    privateCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> Price per month';
+    privateCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> No discount';
+
+    privateCards[1].querySelector('.card-title').textContent = 'Advanced';
+    privateCards[1].querySelector('.price').textContent = '3400 EGP';
+    privateCards[1].querySelector('.discount').textContent = '15% off';
+    privateCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> 2 months plan';
+    privateCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> Discount applied';
+
+    privateCards[2].querySelector('.card-title').textContent = 'Special';
+    privateCards[2].querySelector('.price').textContent = '8000 EGP';
+    privateCards[2].querySelector('.discount').textContent = '25% off';
+    privateCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> 5 months plan';
+    privateCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> 25% off discount';
+
+    // General Plans
+    generalCards[0].querySelector('.card-title').textContent = 'Basic';
+    generalCards[0].querySelector('.price').textContent = '600 EGP / month';
+    generalCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> Price per month';
+    generalCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> No discount';
+
+    generalCards[1].querySelector('.card-title').textContent = 'Advanced';
+    generalCards[1].querySelector('.price').textContent = 'Discounted Price';
+    generalCards[1].querySelector('.discount').textContent = '15% off';
+    generalCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> 3 months plan';
+    generalCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> Discount applied';
+
+    generalCards[2].querySelector('.card-title').textContent = 'Special';
+    generalCards[2].querySelector('.price').textContent = 'Discounted Price';
+    generalCards[2].querySelector('.discount').textContent = '20% off';
+    generalCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> 5 months plan';
+    generalCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> 20% off discount';
+
+    // Button Translations
+    document.querySelectorAll('.book-now-btn').forEach(btn => btn.textContent = 'Book Now');
+
+
+    // FAQ Section Translations
+    document.querySelector('.fag_h2').textContent = 'FAQs';
+    document.querySelectorAll('.faq-header')[0].innerHTML = `
+        <div class="faq-icon" style="background: orange;">▼</div>
+        What age group are your courses designed for?
+    `;
+    document.querySelectorAll('.faq-content')[0].textContent = 'Our courses are tailored for children aged 7-17 years...';
+
+    document.querySelectorAll('.faq-header')[1].innerHTML = `
+        <div class="faq-icon" style="background: green;">▼</div>
+        What is Scratch programming, and why is it beneficial?
+    `;
+    document.querySelectorAll('.faq-content')[1].textContent = 'Scratch is a block-based programming language...';
+
+    document.querySelectorAll('.faq-header')[2].innerHTML = `
+        <div class="faq-icon" style="background: blue;">▼</div>
+        Is Python suitable for children, and what do they learn?
+    `;
+    document.querySelectorAll('.faq-content')[2].textContent = 'Python helps children learn logical thinking...';
+
+    // Form Translations
+    document.querySelector('label[for="phone"]').textContent = 'Phone Number';
+    document.querySelector('input[type="tel"]').placeholder = 'Phone number with country key';
+    document.querySelector('label[for="name"]').textContent = 'Full Name';
+    document.querySelector('input[type="text"]').placeholder = 'Your name';
+    document.querySelector('label[for="age"]').textContent = 'Age';
+    document.querySelector('label[for="branch"]').textContent = 'Choose Suitable branch';
+    document.querySelector('label[for="Complete"]').textContent = 'Did you Alrady started any course with us before and need to complite the coueses?';
+    document.querySelector('label[for="course"]').textContent = 'Choose Course to Complete';
+    document.querySelector('label[for="course-Pric-sel"]').textContent = 'Choose Price plan';
+    document.querySelector('.yes-no-buttons button:first-child').textContent = 'Yes';
+    document.querySelector('.yes-no-buttons button:last-child').textContent = 'No';
+    document.querySelector('.submit-cancel button:first-child').textContent = 'Submit';
+    document.querySelector('.submit-cancel button:last-child').textContent = 'Cancel';
+
+    // Footer Translations
+    document.querySelector('footer a').textContent = 'UPS Junior Facebook';
+    document.querySelectorAll('footer p')[0].textContent = 'Connect with us on ';
+    document.querySelectorAll('footer p')[1].textContent = '© 2025 UPS Junior. All rights reserved.';
+
+    // Slider Section Translations
+    document.querySelectorAll('.slide-title')[0].textContent = '3D Ping Pong';
+    document.querySelectorAll('.slide-description')[0].textContent = 'A physics-based ping pong game.';
+    document.querySelectorAll('.slide-title')[1].textContent = 'AI Self-Driving';
+    document.querySelectorAll('.slide-description')[1].textContent = 'A car trained with AI to drive autonomously.';
+    document.querySelectorAll('.slide-title')[2].textContent = 'Weather Simulation';
+    document.querySelectorAll('.slide-description')[2].textContent = 'Real-time rain and storm physics.';
+    document.querySelectorAll('.slide-title')[3].textContent = 'Maze Solver';
+    document.querySelectorAll('.slide-description')[3].textContent = 'AI solving complex mazes efficiently.';
+    document.querySelectorAll('.slide-title')[4].textContent = 'Digital Clock';
+    document.querySelectorAll('.slide-description')[4].textContent = 'A countdown timer built with Python.';
+    document.querySelectorAll('.slide-title')[5].textContent = '3D Ping Pong';
+    document.querySelectorAll('.slide-description')[5].textContent = 'A physics-based ping pong game.';
+    document.querySelectorAll('.slide-title')[6].textContent = 'AI Self-Driving';
+    document.querySelectorAll('.slide-description')[6].textContent = 'A car trained with AI to drive autonomously.';
+
+    // Reload Courses for English
+    const activeButton = document.querySelector('.button.active');
+    if (activeButton) {
+        loadCourses(activeButton.dataset.group);
+    }
+}
   </script>
 
 
