@@ -6,7 +6,11 @@
   <title>UPS Juniors</title>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&amp;display=swap" rel="stylesheet"/>
+ 
   <style>
 
 
@@ -67,7 +71,8 @@ text-align: left; /* Align text to the left */
         }
  
         body {
-            font-family: 'Segoe UI', Arial, Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Cairo','Segoe UI', Arial, Tahoma, 'Geneva', Verdana, sans-serif;
+
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -516,7 +521,7 @@ text-align: left; /* Align text to the left */
     }
 
     .book-now-btn {
-      background-color: #1f295a;
+      background-color: rgb(88 28 135 / var(--tw-text-opacity, 1));
       color: white;
       padding: 10px 20px;
       border: none;
@@ -530,7 +535,7 @@ text-align: left; /* Align text to the left */
     }
 
     .book-now-btn:hover {
-      background-color: #45a049;
+      background-color: #1f295a;
       transform: scale(1.05);
     }
 
@@ -807,7 +812,7 @@ text-align: left; /* Align text to the left */
 .logo-icon {
     object-fit: contain;
     object-position: 0% 50%;
-    height: 100px;
+    height: 30px;
     vertical-align: middle;
     max-width: 100%;
     display: inline-block;
@@ -826,7 +831,7 @@ text-align: left; /* Align text to the left */
 
   </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
   <header>
     <div class="nav-container">
@@ -868,6 +873,8 @@ text-align: left; /* Align text to the left */
 </section>
 
 <section class="content" id="Ages">
+  <h2 class="Ages_h2  text-4xl font-bold text-center text-purple-900 mb-2">Courses by Ages </h2>
+
      <!--ages data --> 
   <div class="button-container">
     <button class="button active" data-group="7-9">Age 7-9</button>
@@ -888,7 +895,8 @@ text-align: left; /* Align text to the left */
 <section  class="content" id="courses" > 
 
 <!-- Slider Container -->
- 
+<h2 class="Coruses_h2  text-4xl font-bold text-center text-purple-900 mb-2">Coruses </h2>
+
 <div class="slider-container">
   <div class="slider">
       <!-- Project 1 -->
@@ -959,6 +967,7 @@ text-align: left; /* Align text to the left */
 <section class="content" id="price">
   
 
+  <h2 class="Pricing_h2  text-4xl font-bold text-center text-purple-900 mb-2">Pricing Plans</h2>
 
 
       <!-- Pricing Plans -->
@@ -1130,8 +1139,101 @@ text-align: left; /* Align text to the left */
 
 </section>
 
+
+<section id="projects" class="content">
+  <div class="container mx-auto px-4 py-8">
+    <div class="text-center mb-8">
+     <button class="bg-yellow-400 text-white py-2 px-4 rounded-full shadow-md hover:bg-yellow-500 transition duration-300">
+      احصل على جلسة مجانية
+     </button>
+    </div>
+    <h2 class=" Projects_h2 text-4xl font-bold text-center text-purple-900 mb-2">
+     مشاريع الطلاب
+    </h2>
+    <p class="text-center text-gray-600 mb-8">
+     مشاريع أبنائنا هو تجسيد ميدتنا القائم على التعلم عبر الترفيه. استمتع به!
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <div class="bg-white rounded-lg shadow-lg p-6">
+      <iframe class="w-full rounded-t-lg" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="300">
+      </iframe>
+      <h2 class="text-xl font-bold text-orange-500 mt-4">
+       Pictoblox Projects
+      </h2>
+      <div class="flex items-center mt-2">
+       <img alt="Profile picture of a student" class="w-12 h-12 rounded-full" height="50" src="https://placehold.co/50x50" width="50"/>
+       <div class="mr-4">
+        <p class="text-gray-800 font-bold">
+         كرم
+        </p>
+        <p class="text-gray-600">
+         8 سنوات
+        </p>
+       </div>
+      </div>
+      <p class="text-gray-600 mt-4">
+       كرم يتجاوز النماذج التعليمية سعي لتوسيع معرفته وطرح الحلول. مشاريعه تتضمن أنه طبيب، لعبه متاهه، حاسبة درجات ومحادك ChatGPT.
+      </p>
+      <button class="bg-white border border-purple-500 text-purple-500 py-2 px-4 rounded-full mt-4 hover:bg-purple-500 hover:text-white transition duration-300">
+       عرض المشروع
+      </button>
+     </div>
+     <div class="bg-white rounded-lg shadow-lg p-6">
+      <iframe class="w-full rounded-t-lg" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="300">
+      </iframe>
+      <h2 class="text-xl font-bold text-green-500 mt-4">
+       Pictoblox Projects
+      </h2>
+      <div class="flex items-center mt-2">
+       <img alt="Profile picture of a student" class="w-12 h-12 rounded-full" height="50" src="https://placehold.co/50x50" width="50"/>
+       <div class="mr-4">
+        <p class="text-gray-800 font-bold">
+         عبد الله
+        </p>
+        <p class="text-gray-600">
+         8 سنوات
+        </p>
+       </div>
+      </div>
+      <p class="text-gray-600 mt-4">
+       بفضل حيويته وإبداعه، يضيف عبد الله أفكار مبتكرة لمشاريعه. تجسد مشاريعه تطبيق المفاهيم، من متابعه، لعبه متاهه، حاسبة درجات ومحادك ChatGPT.
+      </p>
+      <button class="bg-white border border-purple-500 text-purple-500 py-2 px-4 rounded-full mt-4 hover:bg-purple-500 hover:text-white transition duration-300">
+       عرض المشروع
+      </button>
+     </div>
+     <div class="bg-white rounded-lg shadow-lg p-6">
+      <iframe class="w-full rounded-t-lg" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="300">
+      </iframe>
+      <h2 class="text-xl font-bold text-orange-500 mt-4">
+       Pictoblox Projects
+      </h2>
+      <div class="flex items-center mt-2">
+       <img alt="Profile picture of a student" class="w-12 h-12 rounded-full" height="50" src="https://placehold.co/50x50" width="50"/>
+       <div class="mr-4">
+        <p class="text-gray-800 font-bold">
+         أسية
+        </p>
+        <p class="text-gray-600">
+         12 سنوات
+        </p>
+       </div>
+      </div>
+      <p class="text-gray-600 mt-4">
+       أسية قدمت مشاريع برمجة مبتكرة مثل الآلة الحاسبة و المتاهة وتطبيق محادثة ChatGPT، مما يظهر مهاراتها البرمجية والإبداعية.
+      </p>
+      <button class="bg-white border border-purple-500 text-purple-500 py-2 px-4 rounded-full mt-4 hover:bg-purple-500 hover:text-white transition duration-300">
+       عرض المشروع
+      </button>
+     </div>
+    </div>
+   </div>
+
+</section>
+
+
 <section  id="faq">
-  <h2 class="fag_h2">FAQs</h2>
+  <h2 class="fag_h2  text-4xl font-bold text-center text-purple-900 mb-2">FAQs</h2>
   <div class="faq-container">
       <div class="faq" data-color="rgba(255, 165, 0, 0.7)">
           <div class="faq-header" onclick="toggleFAQ(this)">
