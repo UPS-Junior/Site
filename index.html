@@ -191,7 +191,7 @@ text-align: left; /* Align text to the left */
         }
 
         .content {
-            padding: 1rem 2rem;
+            padding: 2rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -830,7 +830,9 @@ text-align: left; /* Align text to the left */
 }
 
 
-
+#mapImage {
+            transition: opacity 0.5s ease-in-out;
+        }
 
   </style>
 </head>
@@ -866,6 +868,8 @@ text-align: left; /* Align text to the left */
     </div>
 </header>
 
+
+ <!-- home section -->
 <section class="hero" id="home">
     <div class="hero-container mx-auto px-5 py-8">
         <div class="hero-content">
@@ -878,6 +882,8 @@ text-align: left; /* Align text to the left */
              class="hero-image">
     </div>
 </section>
+
+<!-- ages -->
 
 <section class="content" id="Ages">
   <h2 class="Ages_h2  text-4xl font-bold text-center text-purple-900 mb-8">Courses by Ages </h2>
@@ -898,10 +904,11 @@ text-align: left; /* Align text to the left */
 
 
 
- 
-<section  class="content" id="courses" > 
 
-<!-- Slider Container -->
+ <!-- Slider Container -->
+
+<section  class="content " id="courses" > 
+
 <h2 class="Coruses_h2  text-4xl font-bold text-center text-purple-900 mb-2">Coruses </h2>
 
 <div class="slider-container">
@@ -970,11 +977,13 @@ text-align: left; /* Align text to the left */
   </div>
 </div>
 </section>
+ 
+<!--pricing section -->
 
-<section class="content" id="price">
+<section class="content bg-gradient-to-l from-blue-500 to-purple-600" id="price">
   
 
-  <h2 class="Pricing_h2  text-4xl font-bold text-center text-purple-900 mb-2">Pricing Plans</h2>
+  <h2 class="Pricing_h2  text-4xl font-bold text-center text-white mt-5 mb-1">Pricing Plans</h2>
 
 
       <!-- Pricing Plans -->
@@ -1146,7 +1155,7 @@ text-align: left; /* Align text to the left */
 
 </section>
 
-
+ <!-- projects Section -->
 <section id="projects" class="content">
   <div class="container mx-auto my-auto px-4 py-2">
     
@@ -1157,10 +1166,10 @@ text-align: left; /* Align text to the left */
      مشاريع أبنائنا هو تجسيد ميدتنا القائم على التعلم عبر الترفيه. استمتع به!
     </p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-     <div class="bg-white rounded-lg shadow-lg p-6">
+     <div id="project_div" class="bg-white rounded-lg shadow-lg p-6">
       <iframe class="w-full rounded-t-lg" height="200" src="https://youtu.be/rgObQSfFWEw?si=IiKBRB7MNborkYb0" width="300">
       </iframe>
-      <h2 class="Projects_title text-xl font-bold text-orange-500 mt-4">
+      <h2 id="projects_h2" class="Projects_title text-xl font-bold text-orange-500 mt-4">
        Pictoblox Projects
       </h2>
       <div class="flex items-center mt-2">
@@ -1184,7 +1193,7 @@ text-align: left; /* Align text to the left */
      <div class="bg-white rounded-lg shadow-lg p-6">
       <iframe class="w-full rounded-t-lg" height="200" src="https://www.youtube.com/watch?v=Uw5SFcFbaxI&list=PLiNO0_ikUN_mYp6dQCIRHBlulNWeBN8Rm&index=4" width="300">
       </iframe>
-      <h2 class="text-xl font-bold text-green-500 mt-4">
+      <h2 id="projects_h2" class="text-xl font-bold text-green-500 mt-4">
        Pictoblox Projects
       </h2>
       <div class="flex items-center mt-2">
@@ -1208,7 +1217,7 @@ text-align: left; /* Align text to the left */
      <div class="bg-white rounded-lg shadow-lg p-6">
       <iframe class="w-full rounded-t-lg" height="200" src="https://www.youtube.com/watch?v=B5COE6bLbgA&list=PLiNO0_ikUN_lCf4sh0kqHpCQAngDypGep&index=9" width="300">
       </iframe>
-      <h2 class="text-xl font-bold text-orange-500 mt-4">
+      <h2 id="projects_h2" class="text-xl font-bold text-orange-500 mt-4">
        Pictoblox Projects
       </h2>
       <div class="flex items-center mt-2">
@@ -1234,6 +1243,39 @@ text-align: left; /* Align text to the left */
 
 </section>
 
+
+ <!-- Branches Section -->
+<section  class="content flex  my-10 flex-col items-center justify-center  bg-gradient-to-r from-blue-500 to-purple-600">
+  
+  
+  <h1 id="branches_header" class="text-3xl font-bold text-white mb-6 mt-3">Branches</h1>
+
+  <div class="relative w-11/12 max-w-md h-64 bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
+    <img id="mapImage" src="https://i.postimg.cc/pXZjbnH9/minia.png" alt="Map of Egypt" class="w-full h-full object-cover">
+</div>
+
+  <div class="mt-6 flex items-center space-x-4">
+    <label for="locationSelect" id="chooseBranchLabel" class="text-lg font-medium text-white mx-5">Choose the branch:</label>
+    <select id="locationSelect" class="px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105">
+        <option value="El minia">El minia</option>
+        <option value="new_El minia">New minia</option>
+        <option value="smaluat">Smaluat</option>
+        <option value="magagh">Magagh</option>
+        <option value="bany_mazar">Bani Mazar</option>
+        <option value="abo_gurags">Abu Qurqas</option>
+        <option value="mallya">Mallawi</option>
+        <option value="online">Online</option>
+    </select>
+
+    
+
+  </div>
+  <div id="locationDescription" class="mt-6 text-center text-lg font-medium text-white bg-white bg-opacity-20 p-4 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+    EL minia: This is the EL minia branch located in Egypt, next to the Grand Gas Station. We reserve a hall inside the Claude Center, on the fifth floor. Please contact us at 01204262410 via WhatsApp before you go, as we are not always present;
+        
+  </div>
+
+</section>
 
 <section  id="faq">
   <h2 class="fag_h2  text-4xl font-bold text-center text-purple-900 mb-2">FAQs</h2>
@@ -1522,6 +1564,9 @@ $(document).ready(function() {
     });
 });
 
+
+
+
         <!-- FAQ -->
         function toggleFAQ(element) {
             let faq = element.parentElement;
@@ -1560,6 +1605,7 @@ $(document).ready(function() {
 
 
 
+
         // Language Toggle Functionality
 document.getElementById('language-toggle').addEventListener('click', function() {
     const englishIcon = document.getElementById('english-icon');
@@ -1579,9 +1625,83 @@ document.getElementById('language-toggle').addEventListener('click', function() 
     }
 });
 
+
+
+
+
 function translateToArabic() {
 
   document.documentElement.setAttribute('dir', 'rtl'); // Set RTL mode
+// location select
+document.getElementById('branches_header').textContent = 'الفروع';
+document.getElementById('chooseBranchLabel').textContent = 'اختر الفرع:';
+document.getElementById('locationSelect').options[0].text = 'المنيا';
+document.getElementById('locationSelect').options[1].text = 'المنيا الجديدة';
+document.getElementById('locationSelect').options[2].text = 'سمالوط';
+document.getElementById('locationSelect').options[3].text = 'مغاغة';
+document.getElementById('locationSelect').options[4].text = 'بني مزار';
+document.getElementById('locationSelect').options[5].text = 'أبو قرقاص';
+document.getElementById('locationSelect').options[6].text = 'ملوي';
+document.getElementById('locationSelect').options[7].text = 'اون لاين ';
+document.getElementById('locationDescription').textContent = 'المنيا :  فرع المنيا ، بجوار بنزينة الكبرى العالى. بنحجز قاعة داخل مقرر كلود، الدور الخامس الأخير. لازم تكلمونا قبل ما تروحوا على الرقم 01204262410 واتس اب، لعدم تواجدنا بشكل دائم.';
+        
+
+
+
+// location select
+document.getElementById('locationSelect').addEventListener('change', function() {
+    const location = this.value;
+    const image = document.getElementById('mapImage');
+    const description = document.getElementById('locationDescription');
+    let imageUrl = '';
+    let locationText = '';
+
+    switch(location) {
+    case 'El minia':
+        imageUrl = 'https://i.postimg.cc/pXZjbnH9/minia.png';
+        locationText = 'المنيا:  فرع المنيا ، بجوار بنزينة الكبرى العالى. بنحجز قاعة داخل مقرر كلود، الدور الخامس الأخير. لازم تكلمونا قبل ما تروحوا على الرقم 01204262410 واتس اب، لعدم تواجدنا بشكل دائم.';
+        break;
+    case 'new_El minia':
+        imageUrl = 'https://i.postimg.cc/2SSZz8k0/new-minia.png';
+        locationText = 'المنيا الجديدة:  فرع المنيا الجديدة ، الحى الرابع، ميدان الشباب، عمارة 8 ب، آخر دور. لازم تكلمونا قبل ما تروحوا على الرقم 01204262410 واتس اب، لعدم تواجدنا بشكل دائم.';
+        break;
+    case 'smaluat':
+        imageUrl = 'https://i.postimg.cc/K8pg4S4x/samalot.png';
+        locationText = 'سمالوط: لدينا تعاقد مع مكان بنحجز قاعة هناك، شارع موقف المنيا، بجوار نادى الداقوفى. لازم تكلمونا قبل ما تروحوا على الرقم 01204262410 واتس اب، لعدم تواجدنا بشكل دائم.';
+        break;
+    case 'magagh':
+        imageUrl = 'https://i.postimg.cc/cC7nJvtb/magaga.png';
+        locationText = 'مغاغة: شارع المؤسسة، شارع دكتور أحمد أمين، متعاقدين مع مكان أمام صيدلية دكتورة وفاء. لازم تكلمونا قبل ما تروحوا على الرقم 01204262410 واتس اب، لعدم تواجدنا بشكل دائم.';
+        break;
+    case 'bany_mazar':
+        imageUrl = 'https://i.postimg.cc/GhrD5xZw/bany-mazar.png';
+        locationText = 'بني مزار: لدينا تعاقد مع مكان بجوار مستشفى أبو عوف. لازم تكلمونا قبل ما تروحوا على الرقم 01204262410 واتس اب، لعدم تواجدنا بشكل دائم.';
+        break;
+    case 'abo_gurags':
+        imageUrl = 'https://i.postimg.cc/yxCRBmxR/abo.png';
+        locationText = 'أبو قرقاص: بجوار كنيسة أبوسفين، لدينا تعاقد مع أكاديمية بنحجز بداخلها قاعة. لازم تكلمونا قبل ما تروحوا على الرقم 01204262410 واتس اب، لعدم تواجدنا بشكل دائم.';
+        break;
+    case 'mallya':
+        imageUrl = 'https://i.postimg.cc/057mnBX0/mallwy.png';
+        locationText = 'ملوي: أمام مسجد المجيدى، عندنا تعاقد مع أكاديمية بنحجز قاعة بداخلها. لازم تكلمونا قبل ما تروحوا على الرقم 01204262410 واتس اب، لعدم تواجدنا بشكل دائم.';
+        break;
+    case 'online':
+        imageUrl = 'https://via.placeholder.com/500x250?text=Online';
+        locationText = 'عبر الإنترنت: من أماكن في العالم عن طريق برنامج Zoom.';
+        break;
+    default:
+        imageUrl = 'https://via.placeholder.com/500x250?text=Map+of+Egypt';
+        locationText = 'اختر فرعًا لرؤية التفاصيل.';
+}
+    image.style.opacity = 0;
+    setTimeout(() => {
+        image.src = imageUrl;
+        image.style.opacity = 1;
+    }, 500);
+
+    description.textContent = locationText;
+});
+
 
     // Navbar Translations
     document.querySelectorAll('.nav-links a')[0].textContent = 'الرئيسية'; // Home
@@ -1752,12 +1872,19 @@ document.querySelector('.Pricing_h2').textContent = 'خطط الأسعار';
     ];
 
  
-    document.querySelectorAll('.bg-white.rounded-lg.shadow-lg').forEach((project, index) => {
-        project.querySelector('h2').textContent = projects[index].title;
+    document.querySelectorAll('#project_div').forEach((project, index) => {
+        project.querySelector('#projects_h2').textContent = projects[index].title;
         project.querySelector('p.font-bold').textContent = projects[index].name;
         project.querySelector('p.text-gray-600').textContent = projects[index].age;
         project.querySelectorAll('p.text-gray-600')[1].textContent = projects[index].description;
     });
+
+//location
+
+
+
+document.getElementById('branches_header').textContent = 'الفروع';
+           
 
 }
 
@@ -1765,6 +1892,76 @@ function translateToEnglish() {
 
 
   document.documentElement.setAttribute('dir', 'ltr'); // Set LTR mode
+
+
+// location select
+document.getElementById('branches_header').textContent = 'Branches';
+            document.getElementById('chooseBranchLabel').textContent = 'Choose the branch:';
+            document.getElementById('locationSelect').options[0].text = 'El minia';
+            document.getElementById('locationSelect').options[1].text = 'New minia';
+            document.getElementById('locationSelect').options[2].text = 'Samalut';
+            document.getElementById('locationSelect').options[3].text = 'Maghagha';
+            document.getElementById('locationSelect').options[4].text = 'Bani Mazar';
+            document.getElementById('locationSelect').options[5].text = 'Abu Qurqas';
+            document.getElementById('locationSelect').options[6].text = 'Mallawi';
+            document.getElementById('locationSelect').options[7].text = 'Online';
+            document.getElementById('locationDescription').textContent = 'Select a branch to see the details.';
+// location select
+document.getElementById('locationSelect').addEventListener('change', function() {
+    const location = this.value;
+    const image = document.getElementById('mapImage');
+    const description = document.getElementById('locationDescription');
+    let imageUrl = '';
+    let locationText = '';
+
+    switch(location) {
+    case 'El minia':
+        imageUrl = 'https://i.postimg.cc/pXZjbnH9/minia.png';
+        locationText = 'El minia: This is the El minia branch located in Egypt, next to the Grand Gas Station. We reserve a hall inside the Claude Center, on the fifth floor. Please contact us at 01204262410 via WhatsApp before you go, as we are not always present.';
+        break;
+    case 'new_El minia':
+        imageUrl = 'https://i.postimg.cc/2SSZz8k0/new-minia.png';
+        locationText = 'New El minia: This is the New El minia branch located in Egypt, in the fourth district, Youth Square, Building 8B, last floor. Please contact us at 01204262410 via WhatsApp before you go, as we are not always present.';
+        break;
+    case 'smaluat':
+        imageUrl = 'https://i.postimg.cc/K8pg4S4x/samalot.png';
+        locationText = 'Smaluat: We have a contract with a place that rents a hall there, on the Minya bus station street, next to the Dakahlia Club. Please contact us at 01204262410 via WhatsApp before you go, as we are not always present.';
+        break;
+    case 'magagh':
+        imageUrl = 'https://i.postimg.cc/cC7nJvtb/magaga.png';
+        locationText = 'Magagh: Located on the Foundation Street, Dr. Ahmed Amin Street, we have a contract with a place in front of Dr. Wafaa Pharmacy. Please contact us at 01204262410 via WhatsApp before you go, as we are not always present.';
+        break;
+    case 'bany_mazar':
+        imageUrl = 'https://i.postimg.cc/GhrD5xZw/bany-mazar.png';
+        locationText = 'Bany Mazar: We have a contract with a place next to Abu Awf Hospital. Please contact us at 01204262410 via WhatsApp before you go, as we are not always present.';
+        break;
+    case 'abo_gurags':
+        imageUrl = 'https://i.postimg.cc/yxCRBmxR/abo.png';
+        locationText = 'Abo Gurags: Next to Abou Sefin Church, we have a contract with an academy where we reserve a hall. Please contact us at 01204262410 via WhatsApp before you go, as we are not always present.';
+        break;
+    case 'mallya':
+        imageUrl = 'https://i.postimg.cc/057mnBX0/mallwy.png';
+        locationText = 'Mallya: In front of Al-Majidi Mosque, we have a contract with an academy where we reserve a hall. Please contact us at 01204262410 via WhatsApp before you go, as we are not always present.';
+        break;
+    case 'online':
+        imageUrl = 'https://via.placeholder.com/500x250?text=Online';
+        locationText = 'Online: This is the Online branch, accessible from anywhere in the world via Zoom.';
+        break;
+    default:
+        imageUrl = 'https://via.placeholder.com/500x250?text=Map+of+Egypt';
+        locationText = 'Select a branch to see the details.';
+}
+
+    image.style.opacity = 0;
+    setTimeout(() => {
+        image.src = imageUrl;
+        image.style.opacity = 1;
+    }, 500);
+
+    description.textContent = locationText;
+});
+   
+
 
     // Navbar Translations
     document.querySelectorAll('.nav-links a')[0].textContent = 'Home';
@@ -1940,7 +2137,15 @@ document.querySelector('.Projects_h2').textContent = "Student Projects";
     });
 
 
+
+       
+
 }
+
+
+
+
+
   </script>
 
 
