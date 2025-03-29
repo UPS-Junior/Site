@@ -13,6 +13,9 @@
  
   <style>
 
+.check {
+    margin-right: 8px; /* Adjust the spacing */
+}
 
 /* General RTL Styles */
 [dir="rtl"] {
@@ -474,6 +477,7 @@ text-align: left; /* Align text to the left */
     .card ul li .check {
       color: #4CAF50;
       margin-right: 10px;
+      margin-right: 8px; /* Adjust the spacing */
     }
 
     .private-card {
@@ -510,7 +514,7 @@ text-align: left; /* Align text to the left */
 
     .card-title.special {
       color: #ffffff;
-      background: linear-gradient(135deg, #9C27B0, #530661);
+      background: linear-gradient(135deg, #e29628, #d75167);
 
     }
 
@@ -583,6 +587,7 @@ text-align: left; /* Align text to the left */
     .form-container input:hover,
     .form-container select:hover {  /* Added hover effect */        
     background-color: #e9e4e4; /* Light grey background on hover */
+    color: #000; /* Text color on hover */
     }
     
     
@@ -656,7 +661,7 @@ text-align: left; /* Align text to the left */
     margin: -27px 0px 24px;    ;      /* Added margin for spacing */
     border-radius: 5px;     /* Optional: Add rounded corners */
     width: 90%;            /* Optional: Set width to 100% */
-    color: white;           /* Optional: Set text color to white */
+    color: rgb(0, 0, 0);           /* Optional: Set text color to white */
 
 }
 
@@ -984,18 +989,24 @@ text-align: left; /* Align text to the left */
 <section class="content " id="price">
   
 
-  <h2 class="Pricing_h2  text-4xl font-bold text-center text-white mt-5 mb-1">Pricing Plans</h2>
 
+  <h2 class="Pricing_h2  text-4xl font-bold text-center text-purple-900 mt-5 mb-1">Pricing Plans</h2>
+  <p class="Pricing_intro text-center text-gray-700 mb-1">
+    choose the right plan . We offer private plans for a single child and general plans for a group of 8-10 children. Choose what suits your needs
+
+  </p>
 
       <!-- Pricing Plans -->
         <div class="overlay" id="overlay"></div> <!-- Overlay div -->
 
         <div class="container">
           <!-- Toggle buttons for Private / General -->
+
           <div class="toggle-buttons">
             <button class="general-btn active" onclick="togglePlans('general')">General</button>
             <button class="private-btn " onclick="togglePlans('private')">Private</button>
           </div>
+
 
           <!-- Pricing Cards -->
           <div class="pricing-cards" id="pricing-cards">
@@ -1004,29 +1015,37 @@ text-align: left; /* Align text to the left */
               <div class="card private-card">
                 <div class="card-title basic">Basic</div>
                 <div class="price">2000 EGP / month</div>
+                <div class="discount">0% off</div>
+                <span class="line-through">2000.00</span>
+                <span class="text-xs">OLD PRICE</span>
                 <ul>
-                  <li><span class="check">&#10003;</span>Price per month</li>
-                  <li><span class="check">&#10003;</span>No discount</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp;Price per month</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp;No discount</li>
                 </ul>
                 <button class="book-now-btn" onclick="showForm()">Book Now</button>
               </div>
               <div class="card private-card">
-                <div class="card-title advanced">Advanced</div>
-                <div class="price">3400 EGP</div>
-                <div class="discount">15% off</div>
+                <div class="card-title advanced rounded-t-lg">Advanced</div>
+                <div class="price">3400 EGP / month</div>
+                  <div class="discount">15% off</div>
+                  <span class="line-through">4000.00</span>
+                  <span class="text-xs">OLD PRICE</span>
+
                 <ul>
-                  <li><span class="check">&#10003;</span>2 months plan</li>
-                  <li><span class="check">&#10003;</span>Discount applied</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp;2 months plan</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp;600 Discount applied</li>
                 </ul>
                 <button class="book-now-btn" onclick="showForm()">Book Now</button>
               </div>
               <div class="card private-card shadow-card">
-                <div class="card-title special">Special</div>
-                <div class="price">8000 EGP</div>
+                <div class="card-title special rounded-t-lg">Special</div>
+                <div class="price">7500 EGP / month</div>
                 <div class="discount">25% off</div>
+                <span class="line-through">10000.00</span>
+                <span class="text-xs">OLD PRICE</span>
                 <ul>
-                  <li><span class="check">&#10003;</span>5 months plan</li>
-                  <li><span class="check">&#10003;</span>25% off discount</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp;5 months plan</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp;2500 Discount applied</li>
                 </ul>
                 <button class="book-now-btn" onclick="showForm()">Book Now</button>
               </div>
@@ -1035,31 +1054,38 @@ text-align: left; /* Align text to the left */
             <!-- General Plans -->
             <div class="active-cards general" style="display: none;">
               <div class="card general-card">
-                <div class="card-title basic">Basic</div>
+                <div class="card-title basic rounded-t-lg">Basic</div>
                 <div class="price">600 EGP / month</div>
+                <div class="discount">0% off</div>
+                <span class="line-through">600.00</span>
+                <span class="text-xs">OLD PRICE</span>
                 <ul>
-                  <li><span class="check">&#10003;</span>Price per month</li>
-                  <li><span class="check">&#10003;</span>No discount</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp;Price per month</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp;No discount</li>
                 </ul>
                 <button class="book-now-btn" onclick="showForm()">Book Now</button>
               </div>
               <div class="card general-card">
-                <div class="card-title advanced">Advanced</div>
-                <div class="price">Discounted Price</div>
+                <div class="card-title advanced rounded-t-lg">Advanced</div>
+                <div class="price">1530 EGP / month</div>
                 <div class="discount">15% off</div>
+                <span class="line-through">1800.00</span>
+                <span class="text-xs">OLD PRICE</span>
                 <ul>
-                  <li><span class="check">&#10003;</span>3 months plan</li>
-                  <li><span class="check">&#10003;</span>Discount applied</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp;3 months plan</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp; 270 Discount applied</li>
                 </ul>
                 <button class="book-now-btn" onclick="showForm()">Book Now</button>
               </div>
               <div class="card general-card shadow-card">
-                <div class="card-title special">Special</div>
-                <div class="price">Discounted Price</div>
-                <div class="discount">20% off</div>
+                <div class="card-title special rounded-t-lg">Special</div>
+                <div class="price">2250 EGP / month</div>
+                <div class="discount">25% off</div>
+                <span class="line-through">3000.00</span>
+                <span class="text-xs">OLD PRICE</span>
                 <ul>
-                  <li><span class="check">&#10003;</span>5 months plan</li>
-                  <li><span class="check">&#10003;</span>20% off discount</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp;5 months plan</li>
+                  <li><span class="check">&#10003;</span>&nbsp;&nbsp;750 Discount applied</li>
                 </ul>
                 <button class="book-now-btn" onclick="showForm()">Book Now</button>
               </div>
@@ -1136,11 +1162,11 @@ text-align: left; /* Align text to the left */
           <select id="course-Pric-sel" name="course-Pric-sel">
 
               <option value="Private 7500">Private 7500 EGB for Five Months 25% discount</option>
-              <option value="Private 4800">Private 4800 EGB for three Months 20% discount</option>
+              <option value="Private 3400">Private 3400 EGB for Two Months 15% discount</option>
               <option value="Private 2000">Private 2000 EGB for One Month  0% discount </option>
 
-              <option value="General 2200">General 2200 EGB for Five Months  27% discount </option>
-              <option value="General 1470">General 1470 EGB for Three Months  20% discount </option>
+              <option value="General 2250">General 2250 EGB for Five Months  25% discount </option>
+              <option value="General 1530">General 1530 EGB for Three Months  15% discount </option>
               <option value="General 600">General 600 EGB for One Month  0% discount </option>
           </select>
       </div>
@@ -1156,8 +1182,9 @@ text-align: left; /* Align text to the left */
 
 </section>
 
+    <!-- Projects Section -->
 
-
+<section class="content"> 
 <h1 class="text-4xl font-bold text-center text-purple-900 mb-2 project-title">Student Projects</h1>
 <p class="main-description text-center text-gray-600 mb-8">
     Our students' projects have led to major success stories, including scholarships and global competitions.
@@ -1169,8 +1196,8 @@ text-align: left; /* Align text to the left */
       <iframe class="w-full rounded-t-lg" height="200" src="https://www.youtube.com/embed/B5COE6bLbgA" width="300" frameborder="0" allowfullscreen></iframe>      </iframe>
         <h2 class="project-title text-xl font-bold text-orange-500 mt-4">AI & Data Analysis</h2>
         <div class="flex items-center mt-2">
-            <img class="w-12 h-12 rounded-full" src="https://placehold.co/50x50" alt="Student"/>
-            <div class="ml-4">
+            <img class="w-12 h-12 rounded-full" src="https://i.postimg.cc/Hnj1Bcmc/1-2.jpg" alt="Student"/>
+            <div class="ml-4 mx-4">
                 <p class="student-name text-gray-800 font-bold">Joyce</p>
                 <p class="student-age text-gray-600">15 years old</p>
             </div>
@@ -1185,8 +1212,9 @@ text-align: left; /* Align text to the left */
       <iframe class="w-full rounded-t-lg" height="200" src="https://www.youtube.com/embed/rgObQSfFWEw"  width="300" frameborder="0" allowfullscreen></iframe>
         <h2 class="project-title text-xl font-bold text-green-500 mt-4">Engineering Design</h2>
         <div class="flex items-center mt-2">
-            <img class="w-12 h-12 rounded-full" src="https://placehold.co/50x50" alt="Student"/>
-            <div class="ml-4">
+            <img class="w-12 h-12 rounded-full" src="https://i.postimg.cc/bJmjx07f/1-3.jpg" alt="Student"/>
+            
+            <div class="ml-4 mx-4">
                 <p class="student-name text-gray-800 font-bold">Mariam</p>
                 <p class="student-age text-gray-600">10 years old</p>
             </div>
@@ -1201,8 +1229,8 @@ text-align: left; /* Align text to the left */
       <iframe class="w-full rounded-t-lg" height="200" src="https://www.youtube.com/embed/Uw5SFcFbaxI" width="300" frameborder="0" allowfullscreen></iframe>      
         <h2 class="project-title text-xl font-bold text-orange-500 mt-4">Advanced Arduino</h2>
         <div class="flex items-center mt-2">
-            <img class="w-12 h-12 rounded-full" src="https://placehold.co/50x50" alt="Student"/>
-            <div class="ml-4">
+            <img class="w-12 h-12 rounded-full" src="https://i.postimg.cc/PxXjvVFM/1-1.jpg" alt="Student"/>
+            <div class="ml-4 mx-4">
                 <p class="student-name text-gray-800 font-bold">Yustus</p>
                 <p class="student-age text-gray-600">11 years old</p>
             </div>
@@ -1213,13 +1241,13 @@ text-align: left; /* Align text to the left */
     </div>
 </div>
 
-
+</section>
 
  <!-- Branches Section -->
 <section  class="content flex  my-10 flex-col items-center justify-center ">
   
   
-  <h1 id="branches_header" class="text-3xl font-bold text-white mb-6 mt-3">Branches</h1>
+  <h1 id="branches_header" class="text-4xl font-bold text-center text-purple-900 mb-6  mt-3">Branches</h1>
 
   <div class="relative w-11/12 max-w-md h-64 bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
     <img id="mapImage" src="https://i.postimg.cc/4xCxsymT/loc.png" alt="Map of Egypt" class="w-full h-full object-cover">
@@ -1242,7 +1270,7 @@ text-align: left; /* Align text to the left */
     
 
   </div>
-  <div id="locationDescription" class="mt-6 text-center text-lg font-medium text-white bg-white bg-opacity-20 p-4 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+  <div id="locationDescription" class="mt-6 text-center text-lg font-medium text-black  bg-white bg-opacity-20 p-4 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
     Select a branch to see the details.     
   </div>
 
@@ -1295,32 +1323,87 @@ text-align: left; /* Align text to the left */
   </div>
   </section>
 
-<section  id="faq">
-  <h2 class="fag_h2  text-4xl font-bold text-center text-purple-900 mb-2">FAQs</h2>
-  <div class="faq-container">
+
+  <!-- faq Section -->
+  <section id="faq">
+    <h2 class="fag_h2 text-4xl font-bold text-center text-purple-900 mb-2">FAQs</h2>
+    <div class="faq-container">
+
       <div class="faq" data-color="rgba(255, 165, 0, 0.7)">
-          <div class="faq-header" onclick="toggleFAQ(this)">
-              <div class="faq-icon" style="background: orange;">▼</div>
-              What age group are your courses designed for?
-          </div>
-          <div class="faq-content">Our courses are tailored for children aged 7-17 years...</div>
-      </div>
+        <div class="faq-header" onclick="toggleFAQ(this)">
+            <div class="faq-icon" style="background: orange;">▼</div>
+            What age group are your courses designed for?
+        </div>
+        <div class="faq-content">Our courses are tailored for children aged 7-17 years...</div>
+    </div>
+       
+        <div class="faq" data-color="rgba(255, 99, 71, 0.7)">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <div class="faq-icon" style="background: red;">▶</div>
+                When does the course start?
+            </div>
+            <div class="faq-content">After registration, we will contact you via WhatsApp once the group is formed.</div>
+        </div>
+        <div class="faq" data-color="rgba(60, 179, 113, 0.7)">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <div class="faq-icon" style="background: darkgreen;">▶</div>
+                How are the course schedules determined?
+            </div>
+            <div class="faq-content">Once the group is formed, we create a WhatsApp group and discuss the most convenient schedule for everyone.</div>
+        </div>
+        <div class="faq" data-color="rgba(218, 165, 32, 0.7)">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <div class="faq-icon" style="background: goldenrod;">▶</div>
+                Is there a sibling discount?
+            </div>
+            <div class="faq-content">Yes, there is a 10% discount.</div>
+        </div>
+        <div class="faq" data-color="rgba(70, 130, 180, 0.7)">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <div class="faq-icon" style="background: steelblue;">▶</div>
+                Does the child choose the specialization, or does the academy decide?
+            </div>
+            <div class="faq-content">The child is placed in a suitable specialization based on our expertise. Children also go through multiple specializations to discover their strengths.</div>
+        </div>
+        <div class="faq" data-color="rgba(123, 104, 238, 0.7)">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <div class="faq-icon" style="background: mediumpurple;">▶</div>
+                Are there any required tools?
+            </div>
+            <div class="faq-content">Tools are only required for robotics courses, including electronics, batteries, motors, and more.</div>
+        </div>
+        <div class="faq" data-color="rgba(255, 140, 0, 0.7)">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <div class="faq-icon" style="background: darkorange;">▶</div>
+                Does the child need a laptop?
+            </div>
+            <div class="faq-content">No, a modern smartphone is sufficient and does not affect learning. We use programs that work on both laptops and phones. However, an advanced level may require a laptop.</div>
+        </div>
+        <div class="faq" data-color="rgba(255, 69, 0, 0.7)">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <div class="faq-icon" style="background: orangered;">▶</div>
+                What are the payment methods?
+            </div>
+            <div class="faq-content">Payment is made in advance. If you choose the 5-month advanced pricing plan, payment is split into two installments.</div>
+        </div>
+
+       
       <div class="faq" data-color="rgba(0, 128, 0, 0.7)">
           <div class="faq-header" onclick="toggleFAQ(this)">
               <div class="faq-icon" style="background: green;">▶</div>
               What is Scratch programming, and why is it beneficial?
           </div>
-          <div class="faq-content">Scratch is a block-based programming language...</div>
+          <div class="faq-content">Scratch is a block-based programming language that helps children learn logical thinking...</div>
       </div>
       <div class="faq" data-color="rgba(0, 0, 255, 0.7)">
           <div class="faq-header" onclick="toggleFAQ(this)">
               <div class="faq-icon" style="background: blue;">▶</div>
               Is Python suitable for children, and what do they learn?
           </div>
-          <div class="faq-content">Python helps children learn logical thinking...</div>
+          <div class="faq-content">Python helps children develop logical thinking and problem-solving skills...</div>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
   
 
 <!-- Floating WhatsApp Icon -->
@@ -1733,7 +1816,7 @@ document.getElementById('locationSelect').addEventListener('change', function() 
         locationText = 'ملوي: أمام مسجد المجيدى، عندنا تعاقد مع أكاديمية بنحجز قاعة بداخلها. لازم تكلمونا قبل ما تروحوا على الرقم 01204262410 واتس اب، لعدم تواجدنا بشكل دائم.';
         break;
     case 'online':
-        imageUrl = 'https://via.placeholder.com/500x250?text=Online';
+        imageUrl = 'https://i.postimg.cc/L88Lvmgd/images.png';
         locationText = 'عبر الإنترنت: من أماكن في العالم عن طريق برنامج Zoom.';
         break;
     default:
@@ -1779,67 +1862,128 @@ document.querySelector('.cta').textContent = 'ابدأ التعلم الآن';
     let privateCards = document.querySelectorAll('.private-card');
     let generalCards = document.querySelectorAll('.general-card');
 
-    // Private Plans
-    privateCards[0].querySelector('.card-title').textContent = 'أساسي';
-    privateCards[0].querySelector('.price').textContent = '2000 جنيه / الشهر';
-    privateCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> السعر شهريًا';
-    privateCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> بدون خصم';
 
-    privateCards[1].querySelector('.card-title').textContent = 'متقدم';
-    privateCards[1].querySelector('.price').textContent = '3400 جنيه';
-    privateCards[1].querySelector('.discount').textContent = 'خصم 15%';
-    privateCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> خطة لمدة شهرين';
-    privateCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> تم تطبيق الخصم';
+// الخطط الخاصة
+privateCards[0].querySelector('.card-title').textContent = 'الأساسي';
+privateCards[0].querySelector('.price').textContent = '2000 جنيه / الشهر';
+privateCards[0].querySelector('.discount').textContent = 'بدون خصم';
+privateCards[0].querySelector('.line-through').textContent = '2000.00';
+privateCards[0].querySelector('.text-xs').textContent = 'السعر القديم';
+privateCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; السعر شهريًا';
+privateCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; بدون خصم';
 
-    privateCards[2].querySelector('.card-title').textContent = 'خاص';
-    privateCards[2].querySelector('.price').textContent = '8000 جنيه';
-    privateCards[2].querySelector('.discount').textContent = 'خصم 25%';
-    privateCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> خطة لمدة 5 أشهر';
-    privateCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> خصم 25%';
+privateCards[1].querySelector('.card-title').textContent = 'المتقدم';
+privateCards[1].querySelector('.price').textContent = '3400 جنيه / شهرين';
+privateCards[1].querySelector('.discount').textContent = 'خصم 15%';
+privateCards[1].querySelector('.line-through').textContent = '4000.00';
+privateCards[1].querySelector('.text-xs').textContent = 'السعر القديم';
+privateCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; خطة لمدة شهرين';
+privateCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; خصم 600 جنيه';
 
-    // General Plans
-    generalCards[0].querySelector('.card-title').textContent = 'أساسي';
-    generalCards[0].querySelector('.price').textContent = '600 جنيه / الشهر';
-    generalCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> السعر شهريًا';
-    generalCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> بدون خصم';
+privateCards[2].querySelector('.card-title').textContent = 'المميز';
+privateCards[2].querySelector('.price').textContent = '7500 جنيه / 5 أشهر';
+privateCards[2].querySelector('.discount').textContent = 'خصم 25%';
+privateCards[2].querySelector('.line-through').textContent = '10000.00';
+privateCards[2].querySelector('.text-xs').textContent = 'السعر القديم';
+privateCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp;   خطة لمدة 5 أشهر';
+privateCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp;   خصم 2500 جنيه'   ;
 
-    generalCards[1].querySelector('.card-title').textContent = 'متقدم';
-    generalCards[1].querySelector('.price').textContent = 'السعر بعد الخصم';
-    generalCards[1].querySelector('.discount').textContent = 'خصم 15%';
-    generalCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> خطة لمدة 3 أشهر';
-    generalCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> تم تطبيق الخصم';
+// الخطط العامة
+generalCards[0].querySelector('.card-title').textContent = 'الأساسي';
+generalCards[0].querySelector('.price').textContent = '600 جنيه / الشهر';
+generalCards[0].querySelector('.discount').textContent = 'بدون خصم';
+generalCards[0].querySelector('.line-through').textContent = '600.00';
+generalCards[0].querySelector('.text-xs').textContent = 'السعر القديم';
+generalCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; السعر شهريًا';
+generalCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; بدون خصم';
 
-    generalCards[2].querySelector('.card-title').textContent = 'خاص';
-    generalCards[2].querySelector('.price').textContent = 'السعر بعد الخصم';
-    generalCards[2].querySelector('.discount').textContent = 'خصم 20%';
-    generalCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> خطة لمدة 5 أشهر';
-    generalCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> خصم 20%';
+generalCards[1].querySelector('.card-title').textContent = 'المتقدم';
+generalCards[1].querySelector('.price').textContent = '1530 جنيه / 3 أشهر';
+generalCards[1].querySelector('.discount').textContent = 'خصم 15%';
+generalCards[1].querySelector('.line-through').textContent = '1800.00';
+generalCards[1].querySelector('.text-xs').textContent = 'السعر القديم';
+generalCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; خطة لمدة 3 أشهر';
+generalCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; خصم 270 جنيه';
+
+generalCards[2].querySelector('.card-title').textContent = 'المميز';
+generalCards[2].querySelector('.price').textContent = '2250 جنيه / 5 أشهر';
+generalCards[2].querySelector('.discount').textContent = 'خصم 25%';
+generalCards[2].querySelector('.line-through').textContent = '3000.00';
+generalCards[2].querySelector('.text-xs').textContent = 'السعر القديم';
+generalCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; خطة لمدة 5 أشهر';
+generalCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; خصم 750 جنيه';
+
 
     // Button Translations
     document.querySelectorAll('.book-now-btn').forEach(btn => btn.textContent = 'احجز الآن');
 
 
   
-
     // FAQ Section Translations
     document.querySelector('.fag_h2').textContent = 'الأسئلة الشائعة';
+
     document.querySelectorAll('.faq-header')[0].innerHTML = `
         <div class="faq-icon" style="background: orange;">▼</div>
         ما هي الفئة العمرية التي صممت لها دوراتكم؟
     `;
     document.querySelectorAll('.faq-content')[0].textContent = 'دوراتنا مصممة للأطفال من عمر 7 إلى 17 عامًا...';
 
+    
     document.querySelectorAll('.faq-header')[1].innerHTML = `
+        <div class="faq-icon" style="background: red;">▼</div>
+        متى يبدأ الكورس؟
+    `;
+    document.querySelectorAll('.faq-content')[1].textContent = 'بعد التسجيل، سنتواصل معكم عبر الواتس آب بعد تكوين المجموعة.';
+
+    document.querySelectorAll('.faq-header')[2].innerHTML = `
+        <div class="faq-icon" style="background: purple;">▼</div>
+        كيف يتم تحديد مواعيد الكورسات؟
+    `;
+    document.querySelectorAll('.faq-content')[2].textContent = 'بعد تكوين المجموعة، نقوم بعمل جروب واتس آب ونناقش الموعد المناسب للجميع.';
+
+    document.querySelectorAll('.faq-header')[3].innerHTML = `
+        <div class="faq-icon" style="background: teal;">▼</div>
+        هل يوجد خصم للأخوة؟
+    `;
+    document.querySelectorAll('.faq-content')[3].textContent = 'نعم، يوجد خصم 10%.';
+
+    document.querySelectorAll('.faq-header')[4].innerHTML = `
+        <div class="faq-icon" style="background: brown;">▼</div>
+        هل يختار الطفل التخصص أم الأكاديمية؟
+    `;
+    document.querySelectorAll('.faq-content')[4].textContent = 'نحن نساعد الطفل في اختيار التخصص المناسب له بناءً على خبرتنا، ويمر الأطفال على أكثر من تخصص لاكتشاف ميولهم.';
+
+    document.querySelectorAll('.faq-header')[5].innerHTML = `
+        <div class="faq-icon" style="background: darkorange;">▼</div>
+        هل هناك أدوات مطلوبة؟
+    `;
+    document.querySelectorAll('.faq-content')[5].textContent = 'توجد أدوات مطلوبة فقط في كورسات الروبوتيكس، مثل الإلكترونيات والبطاريات والمحركات وغيرها.';
+
+    document.querySelectorAll('.faq-header')[6].innerHTML = `
+        <div class="faq-icon" style="background: darkgreen;">▼</div>
+        هل يجب أن يكون لدى الطفل لابتوب؟
+    `;
+    document.querySelectorAll('.faq-content')[6].textContent = 'ليس ضرورياً، يمكن استخدام هاتف حديث، ولكن المستويات المتقدمة جداً تتطلب لابتوب.';
+
+    document.querySelectorAll('.faq-header')[7].innerHTML = `
+        <div class="faq-icon" style="background: navy;">▼</div>
+        ما هي طريقة السداد؟
+    `;
+    document.querySelectorAll('.faq-content')[7].textContent = 'يتم دفع الرسوم مقدماً، وفي حالة اختيار خطة 5 شهور، يتم الدفع على مرتين.';
+
+
+    document.querySelectorAll('.faq-header')[8].innerHTML = `
         <div class="faq-icon" style="background: green;">▼</div>
         ما هو برمجة سكراتش، ولماذا هي مفيدة؟
     `;
-    document.querySelectorAll('.faq-content')[1].textContent = 'سكراتش هي لغة برمجة تعتمد على الكتل...';
+    document.querySelectorAll('.faq-content')[8].textContent = 'سكراتش هي لغة برمجة تعتمد على الكتل...';
 
-    document.querySelectorAll('.faq-header')[2].innerHTML = `
+    document.querySelectorAll('.faq-header')[9].innerHTML = `
         <div class="faq-icon" style="background: blue;">▼</div>
-        هل بايثون مناسبة للأطفال، وماذا يتعلمون？
+        هل بايثون مناسبة للأطفال، وماذا يتعلمون؟
     `;
-    document.querySelectorAll('.faq-content')[2].textContent = 'بايثون تساعد الأطفال على تعلم التفكير المنطقي...';
+    document.querySelectorAll('.faq-content')[9].textContent = 'بايثون تساعد الأطفال على تعلم التفكير المنطقي...';
+
 
     // Form Translations
     document.querySelector('label[for="phone"]').textContent = 'رقم الهاتف';
@@ -1900,6 +2044,8 @@ document.querySelector('.students_h2').textContent = 'طلاب الاكاديم�
 
 // Pricing Plans Section
 document.querySelector('.Pricing_h2').textContent = 'خطط الأسعار';
+document.querySelector('.Pricing_intro').textContent = "اختر خطة تناسبك . نحن نقدم خططًا خاصة المجموعة تتكون من طفل واحد فقط  و خططا عامة المجموعة تتكون من 8-10 اطفال"; 
+
 
 
 
@@ -1997,7 +2143,7 @@ document.getElementById('locationSelect').addEventListener('change', function() 
         locationText = 'Mallya: In front of Al-Majidi Mosque, we have a contract with an academy where we reserve a hall. Please contact us at 01204262410 via WhatsApp before you go, as we are not always present.';
         break;
     case 'online':
-        imageUrl = 'https://via.placeholder.com/500x250?text=Online';
+        imageUrl = 'https://i.postimg.cc/L88Lvmgd/images.png';
         locationText = 'Online: This is the Online branch, accessible from anywhere in the world via Zoom.';
         break;
     default:
@@ -2046,40 +2192,54 @@ document.querySelector('.cta').textContent = 'Start Learning Now';
     let generalCards = document.querySelectorAll('.general-card');
 
     // Private Plans
-    privateCards[0].querySelector('.card-title').textContent = 'Basic';
-    privateCards[0].querySelector('.price').textContent = '2000 EGP / month';
-    privateCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> Price per month';
-    privateCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> No discount';
+privateCards[0].querySelector('.card-title').textContent = 'Basic';
+privateCards[0].querySelector('.price').textContent = '2000 EGP / month';
+privateCards[1].querySelector('.discount').textContent = '0% off';
+privateCards[0].querySelector('.line-through').textContent = '2000.00';
+privateCards[0].querySelector('.text-xs').textContent = 'OLD PRICE';
+privateCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; Price per month';
+privateCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; No discount';
 
-    privateCards[1].querySelector('.card-title').textContent = 'Advanced';
-    privateCards[1].querySelector('.price').textContent = '3400 EGP';
-    privateCards[1].querySelector('.discount').textContent = '15% off';
-    privateCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> 2 months plan';
-    privateCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> Discount applied';
+privateCards[1].querySelector('.card-title').textContent = 'Advanced';
+privateCards[1].querySelector('.price').textContent = '3400 EGP / 2 months';
+privateCards[1].querySelector('.discount').textContent = '15% off';
+privateCards[1].querySelector('.line-through').textContent = '4000.00';
+privateCards[1].querySelector('.text-xs').textContent = 'OLD PRICE';
+privateCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; 2 months plan';
+privateCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; 600 Discount applied';
 
-    privateCards[2].querySelector('.card-title').textContent = 'Special';
-    privateCards[2].querySelector('.price').textContent = '8000 EGP';
-    privateCards[2].querySelector('.discount').textContent = '25% off';
-    privateCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> 5 months plan';
-    privateCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> 25% off discount';
+privateCards[2].querySelector('.card-title').textContent = 'Special';
+privateCards[2].querySelector('.price').textContent = '7500 EGP / 5 months';
+privateCards[2].querySelector('.discount').textContent = '25% off';
+privateCards[2].querySelector('.line-through').textContent = '10000.00';
+privateCards[2].querySelector('.text-xs').textContent = 'OLD PRICE';
+privateCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; 5 months plan';
+privateCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; 2500 Discount applied';
 
-    // General Plans
-    generalCards[0].querySelector('.card-title').textContent = 'Basic';
-    generalCards[0].querySelector('.price').textContent = '600 EGP / month';
-    generalCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> Price per month';
-    generalCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> No discount';
+// General Plans
+generalCards[0].querySelector('.card-title').textContent = 'Basic';
+generalCards[0].querySelector('.price').textContent = '600 EGP / month';
+generalCards[0].querySelector('.discount').textContent = '0% off';
+generalCards[0].querySelector('.line-through').textContent = '600.00';
+generalCards[0].querySelector('.text-xs').textContent = 'OLD PRICE';
+generalCards[0].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; Price per month';
+generalCards[0].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; No discount';
 
-    generalCards[1].querySelector('.card-title').textContent = 'Advanced';
-    generalCards[1].querySelector('.price').textContent = 'Discounted Price';
-    generalCards[1].querySelector('.discount').textContent = '15% off';
-    generalCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> 3 months plan';
-    generalCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> Discount applied';
+generalCards[1].querySelector('.card-title').textContent = 'Advanced';
+generalCards[1].querySelector('.price').textContent = '1530 EGP / 3 months';
+generalCards[1].querySelector('.discount').textContent = '15% off';
+generalCards[1].querySelector('.line-through').textContent = '1800.00';
+generalCards[1].querySelector('.text-xs').textContent = 'OLD PRICE';
+generalCards[1].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; 3 months plan';
+generalCards[1].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; 270 Discount applied';
 
-    generalCards[2].querySelector('.card-title').textContent = 'Special';
-    generalCards[2].querySelector('.price').textContent = 'Discounted Price';
-    generalCards[2].querySelector('.discount').textContent = '20% off';
-    generalCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span> 5 months plan';
-    generalCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span> 20% off discount';
+generalCards[2].querySelector('.card-title').textContent = 'Special';
+generalCards[2].querySelector('.price').textContent = '2250 EGP / 5 months';
+generalCards[2].querySelector('.discount').textContent = '25% off';
+generalCards[2].querySelector('.line-through').textContent = '3000.00';
+generalCards[2].querySelector('.text-xs').textContent = 'OLD PRICE';
+generalCards[2].querySelectorAll('ul li')[0].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; 5 months plan';
+generalCards[2].querySelectorAll('ul li')[1].innerHTML = '<span class="check">&#10003;</span>&nbsp;&nbsp; 750 Discount applied';
 
     // Button Translations
     document.querySelectorAll('.book-now-btn').forEach(btn => btn.textContent = 'Book Now');
@@ -2093,17 +2253,61 @@ document.querySelector('.cta').textContent = 'Start Learning Now';
     `;
     document.querySelectorAll('.faq-content')[0].textContent = 'Our courses are tailored for children aged 7-17 years...';
 
+
     document.querySelectorAll('.faq-header')[1].innerHTML = `
+        <div class="faq-icon" style="background: purple;">▼</div>
+        When does the course start?
+    `;
+    document.querySelectorAll('.faq-content')[1].textContent = 'After registration, we will contact you via WhatsApp once the group is formed.';
+
+    document.querySelectorAll('.faq-header')[2].innerHTML = `
+        <div class="faq-icon" style="background: teal;">▼</div>
+        How are course schedules chosen?
+    `;
+    document.querySelectorAll('.faq-content')[2].textContent = 'After forming a group, we create a WhatsApp group to discuss and decide on a suitable schedule for everyone.';
+
+    document.querySelectorAll('.faq-header')[3].innerHTML = `
+        <div class="faq-icon" style="background: red;">▼</div>
+        Is there a sibling discount?
+    `;
+    document.querySelectorAll('.faq-content')[3].textContent = 'Yes, there is a 10% discount for siblings.';
+
+    document.querySelectorAll('.faq-header')[4].innerHTML = `
+        <div class="faq-icon" style="background: pink;">▼</div>
+        Does the child choose the specialization or the academy?
+    `;
+    document.querySelectorAll('.faq-content')[4].textContent = 'Based on our experience, we place children in a suitable specialization, ensuring they are exposed to multiple fields to identify their strengths.';
+
+    document.querySelectorAll('.faq-header')[5].innerHTML = `
+        <div class="faq-icon" style="background: brown;">▼</div>
+        Are any tools required?
+    `;
+    document.querySelectorAll('.faq-content')[5].textContent = 'Tools are required only for robotics courses, including electronics, batteries, motors, and more.';
+
+    document.querySelectorAll('.faq-header')[6].innerHTML = `
+        <div class="faq-icon" style="background: cyan;">▼</div>
+        Does the child need a laptop?
+    `;
+    document.querySelectorAll('.faq-content')[6].textContent = 'A modern smartphone is sufficient for most courses, but an advanced level may require a laptop.';
+
+    document.querySelectorAll('.faq-header')[7].innerHTML = `
+        <div class="faq-icon" style="background: navy;">▼</div>
+        What is the payment method?
+    `;
+    document.querySelectorAll('.faq-content')[7].textContent = 'Payment is made in advance. For the 5-month advanced pricing plan, payment can be made in two installments.';
+
+
+    document.querySelectorAll('.faq-header')[8].innerHTML = `
         <div class="faq-icon" style="background: green;">▼</div>
         What is Scratch programming, and why is it beneficial?
     `;
-    document.querySelectorAll('.faq-content')[1].textContent = 'Scratch is a block-based programming language...';
+    document.querySelectorAll('.faq-content')[8].textContent = 'Scratch is a block-based programming language...';
 
-    document.querySelectorAll('.faq-header')[2].innerHTML = `
+    document.querySelectorAll('.faq-header')[9].innerHTML = `
         <div class="faq-icon" style="background: blue;">▼</div>
         Is Python suitable for children, and what do they learn?
     `;
-    document.querySelectorAll('.faq-content')[2].textContent = 'Python helps children learn logical thinking...';
+    document.querySelectorAll('.faq-content')[9].textContent = 'Python helps children learn logical thinking...';
 
     // Form Translations
     document.querySelector('label[for="phone"]').textContent = 'Phone Number';
@@ -2162,6 +2366,8 @@ document.querySelector('.students_h2').textContent = ' Students of The  Academy'
 
 // Pricing Plans Section
 document.querySelector('.Pricing_h2').textContent = 'Pricing Plans';
+document.querySelector('.Pricing_intro').textContent = "choose the right plan . We offer private plans for a single child and general plans for a group of 8-10 children. Choose what suits your needs.";
+
 
 
 
